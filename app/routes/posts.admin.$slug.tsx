@@ -1,9 +1,5 @@
-import {
-  ActionFunction,
-  LoaderFunction,
-  json,
-  redirect,
-} from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
+import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import {
   Form,
   isRouteErrorResponse,
@@ -14,12 +10,12 @@ import {
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
 import {
-  Post,
   getPost,
   createPost,
   updatePost,
   deletePost,
 } from "~/models/post.server";
+import type { Post } from "~/models/post.server";
 import { requireAdminUser } from "~/session.server";
 
 type LoaderData = {

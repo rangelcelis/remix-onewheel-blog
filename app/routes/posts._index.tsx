@@ -2,7 +2,7 @@ import { json } from "@remix-run/node";
 import type { LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getAllPosts } from "~/models/post.server";
-import { useOptionalAdminUser, useOptionalUser } from "~/utils";
+import { useOptionalAdminUser } from "~/utils";
 
 type LoaderData = {
   posts: Awaited<ReturnType<typeof getAllPosts>>;
